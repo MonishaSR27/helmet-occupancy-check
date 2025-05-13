@@ -1,0 +1,16 @@
+1.The user uploads a vehicle image to an Amazon S3 bucket.
+
+2.The Amazon S3 bucket is configured to trigger an AWS Lambda function.
+
+3.The Lambda function is responsible for calling Amazon Rekognition,sending the uploaded image for label detection.
+
+4.Amazon Rekognition processes the image and detects objects and labels such as "Person" and "Helmet".
+
+5.Lambda receives the results from Rekognition and	
+	**Counts how many people are detected
+	**Checks how mnay helmets are detected
+	**Compares counts and applies rules for violation
+
+6.The processed data including people count, helmet count, rule violation status and timestamp is saved to an Amazon DynamoDB table.
+
+7.Logs are optionally recorded to Amazon CloudWatch Logs for monitoring and debugging. 
